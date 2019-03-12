@@ -9,4 +9,4 @@ services:
       - "49152:49152"
     volumes:
       - ./:/usr/src/app
-    command: bash
+    command: ng serve --host 0.0.0.0 --poll=2000
