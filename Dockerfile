@@ -14,6 +14,8 @@ WORKDIR $HOME
 RUN npm install -g @angular/cli@7.3.5
 RUN npm cache clean --force
 
+run npm i
+
 # Puerto entorno dev
 EXPOSE 4200
 # Puerto livereload
