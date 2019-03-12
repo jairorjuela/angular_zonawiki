@@ -1,4 +1,4 @@
 # angular_zonawiki
 
-#run container
+# run container
 docker-compose run angular bash
