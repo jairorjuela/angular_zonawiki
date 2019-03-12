@@ -10,13 +10,9 @@ ENV HOME=/usr/src/app
 RUN mkdir $HOME
 WORKDIR $HOME
 
-ADD ./package.json $HOME
-
 # Instalamos angular cli en nuestra imágen
 RUN npm install -g @angular/cli@7.3.5
 RUN npm cache clean --force
-
-run npm i
 
 # Puerto entorno dev
 EXPOSE 4200
