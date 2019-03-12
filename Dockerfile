@@ -1,5 +1,5 @@
 # Dockerfile
-FROM node:6.9
+FROM node:11
 MAINTAINER OscarZonawiki
 LABEL authors="Oscar Guzman"
 
@@ -11,7 +11,8 @@ RUN mkdir $HOME
 WORKDIR $HOME
 
 # Instalamos angular cli en nuestra imágen
-RUN npm install -g @angular/cli && npm cache clean
+RUN npm install -g @angular/cli@7.3.5
+RUN npm cache clean --force
 
 # Puerto entorno dev
 EXPOSE 4200
