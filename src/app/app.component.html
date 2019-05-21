@@ -1,7 +1,27 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    blah blah blah blah {{ title }}!
+    Blah {{ title }}!
   </h1>
 </div>
-<app-tas1></app-tas1>
+
+<h1>{{welcome}}</h1>
+
+<table class="table">
+  <tr>
+      <th>#</th>
+      <th>Framework</th>
+      <th>Owner</th>
+      <th>Release</th>
+  </tr>
+  <tr *ngFor="let framework of frameworks; let i = index" >
+    <td>{{i + 1}}</td>
+
+    <span *ngIf="!framework.show">
+      <td><h1>{{framework.framework}}</h1></td>
+      <td><p>{{framework.owner}}</p></td>
+    </span>
+
+      <td><button [ngStyle]="{'background' : ['red','gray','green'][i]}" (click) = "toggle(framework)">{{framework.release}}</button></td>
+  </tr>
+</table>
