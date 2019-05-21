@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Blah {{ title }}!
+    Hey! {{ title }}!
   </h1>
 </div>
 
@@ -9,19 +9,15 @@
 
 <table class="table">
   <tr>
-      <th>#</th>
-      <th>Framework</th>
-      <th>Owner</th>
-      <th>Release</th>
+      <th>Tarea</th>
+      <th>Responsable</th>
   </tr>
-  <tr *ngFor="let framework of frameworks; let i = index" >
+  <tr *ngFor="let task of tasks; let i = index" >
     <td>{{i + 1}}</td>
-
-    <span *ngIf="!framework.show">
-      <td><h1>{{framework.framework}}</h1></td>
-      <td><p>{{framework.owner}}</p></td>
-    </span>
-
-      <td><button [ngStyle]="{'background' : ['red','gray','green'][i]}" (click) = "toggle(framework)">{{framework.release}}</button></td>
+    <div *ngIf="!task.show">
+      <td><h1>{{task.task}}</h1></td>
+      <td><p>{{task.responsible}}</p></td>
+    </div>
+    <td><button [ngStyle]="{'background' : ['yellow','orange','grey'][i]}" (click) = "toggle(task)">Esconde o muestra esta tarea</button></td>
   </tr>
 </table>
